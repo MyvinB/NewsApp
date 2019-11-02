@@ -1,12 +1,18 @@
 pipeline {
   agent {
     docker {
-      image 'maven:3-jdk-8;mysql'
+      image 'maven:3-jdk-8'
     }
 
   }
   stages {
     stage('Clean') {
+      agent {
+        docker {
+          image 'mysql'
+        }
+
+      }
       steps {
         sh 'mvn clean'
       }
