@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'maven:3-jdk-8;mysql:5.5'
+      image 'maven:3-jdk-8;mysql'
     }
 
   }
