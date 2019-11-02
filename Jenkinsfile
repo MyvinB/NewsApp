@@ -18,6 +18,12 @@ pipeline {
       }
     }
     stage('test') {
+      agent {
+        docker {
+          image 'mysql/mysql-server'
+        }
+
+      }
       steps {
         sh 'mvn test -B'
       }
